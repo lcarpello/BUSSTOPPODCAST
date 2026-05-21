@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Stop Podcast</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans"> <!-- Navbar --> <nav class="border-b border-green-800 px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-black text-green-400">BUS STOP PODCAST</h1><div class="flex gap-4 flex-wrap">
+  <button onclick="showSection('home')" class="text-white hover:text-green-400">Home</button>
+  <button onclick="showSection('about')" class="text-white hover:text-green-400">About Us</button>
+  <button onclick="showSection('signup')" class="text-white hover:text-green-400">Sign Up</button>
+  <button onclick="showSection('ideas')" class="text-white hover:text-green-400">Ideas</button>
+  <button onclick="showSection('contact')" class="text-white hover:text-green-400">Contact Us</button>
+</div>
+
+  </nav> <!-- Home --> <section id="home" class="section px-6 py-24 text-center">
+    <h1 class="text-6xl font-black text-green-400 mb-6">
+      BUS STOP PODCAST
+    </h1><p class="max-w-2xl mx-auto text-zinc-300 text-xl mb-10">
+  Funny interviews, random questions, and hilarious responses.
+</p>
+
+<button onclick="showSection('signup')" class="bg-green-500 text-black font-bold px-8 py-4 rounded-2xl">
+  Sign Up To Be A Guest
+</button>
+
+  </section> <!-- About --> <section id="about" class="section hidden px-6 py-24 text-center max-w-4xl mx-auto">
+    <h2 class="text-5xl font-black text-green-400 mb-8">About Us</h2><p class="text-zinc-300 text-xl leading-9 mb-10">
+  The Bus Stop Podcast is a funny podcast where we interview people and get funny responses — and maybe that could be you.
+</p>
+
+<div class="bg-zinc-900 border border-green-800 rounded-3xl p-8">
+  <h3 class="text-3xl font-bold text-green-400 mb-4">Want To Join?</h3>
+
+  <p class="text-zinc-300 text-lg mb-6">
+    If you want to be part of the podcast, head over to the sign up section and send us your details.
+  </p>
+
+  <button onclick="showSection('signup')" class="bg-green-500 text-black font-bold px-6 py-3 rounded-2xl">
+    Go To Sign Up
+  </button>
+</div>
+
+  </section> <!-- Sign Up --> <section id="signup" class="section hidden px-6 py-24 text-center max-w-3xl mx-auto">
+    <h2 class="text-5xl font-black text-green-400 mb-8">Guest Sign Up</h2><div class="bg-zinc-900 border border-green-800 rounded-3xl p-8 space-y-6">
+  <input placeholder="Your Name" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
+
+  <input placeholder="Your Email" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
+
+  <textarea placeholder="Why do you want to join the podcast?" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4 h-40"></textarea>
+
+  <button class="bg-green-500 text-black font-bold px-8 py-4 rounded-2xl w-full">
+    Submit
+  </button>
+</div>
+
+  </section> <!-- Ideas --> <section id="ideas" class="section hidden px-6 py-24 text-center max-w-3xl mx-auto">
+    <h2 class="text-5xl font-black text-green-400 mb-8">Give Us Ideas</h2><div class="bg-zinc-900 border border-green-800 rounded-3xl p-8 space-y-6">
+  <textarea placeholder="Give us podcast ideas, questions, dares, or anything funny..." class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4 h-52"></textarea>
+
+  <button class="bg-green-500 text-black font-bold px-8 py-4 rounded-2xl w-full">
+    Send Idea
+  </button>
+</div>
+
+  </section> <!-- Contact --> <section id="contact" class="section hidden px-6 py-24 text-center max-w-3xl mx-auto">
+    <h2 class="text-5xl font-black text-green-400 mb-8">Contact Us</h2><div class="bg-zinc-900 border border-green-800 rounded-3xl p-10">
+  <p class="text-zinc-300 text-xl mb-6">
+    Email us for questions, guest requests, or podcast ideas.
+  </p>
+
+  <a href="mailto:bus.stop.podcast@outlook.com" class="text-2xl text-green-400 font-bold underline break-all">
+    bus.stop.podcast@outlook.com
+  </a>
+</div>
+
+  </section> <!-- Footer --> <footer class="border-t border-green-900 py-8 text-center text-zinc-500">
+    © 2026 Bus Stop Podcast
+  </footer> <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.add('hidden'));
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script></body>
+</html>
