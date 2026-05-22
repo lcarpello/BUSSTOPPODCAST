@@ -44,13 +44,13 @@
 
   </section> <!-- Sign Up --> <section id="signup" class="section hidden px-6 py-24 text-center max-w-3xl mx-auto">
     <h2 class="text-5xl font-black text-green-400 mb-8">Guest Sign Up</h2><div class="bg-zinc-900 border border-green-800 rounded-3xl p-8 space-y-6">
-  <input placeholder="Your Name" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
+  <input id="guestName" placeholder="Your Name" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
 
-  <input placeholder="Your Email" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
+  <input id="guestEmail" placeholder="Your Email" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4" />
 
-  <textarea placeholder="Why do you want to join the podcast?" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4 h-40"></textarea>
+  <textarea id="guestReason" placeholder="Why do you want to join the podcast?" class="w-full bg-black border border-zinc-700 rounded-2xl px-5 py-4 h-40"></textarea>
 
-  <button onclick="window.location.href='mailto:example@example.com?subject=Subject&body=Message'" class="bg-green-500 text-black font-bold px-8 py-4 rounded-2xl w-full">
+  <button onclick="submitSignUp()" class="bg-green-500 text-black font-bold px-8 py-4 rounded-2xl w-full">
     Submit
   </button>
 </div>
@@ -82,6 +82,30 @@
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => section.classList.add('hidden'));
       document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function submitSignUp() {
+      const name = document.getElementById('guestName').value;
+      const email = document.getElementById('guestEmail').value;
+      const reason = document.getElementById('guestReason').value;
+
+      if (!name || !email || !reason) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const subject = encodeURIComponent('Bus Stop Podcast Guest Sign Up');
+      const body = encodeURIComponent(`Name: ${name}\n\nEmail: ${email}\n\nWhy they want to join:\n${reason}`);
+      
+      window.location.href = `mailto:bus.stop.podcast@outlook.com?subject=${subject}&body=${body}`;
+      
+      setTimeout(() => {
+        alert('Thank you for signing up! We will get back to you soon.');
+        document.getElementById('guestName').value = '';
+        document.getElementById('guestEmail').value = '';
+        document.getElementById('guestReason').value = '';
+        showSection('home');
+      }, 500);
     }
   </script></body>
 </html>
